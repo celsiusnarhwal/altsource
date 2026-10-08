@@ -56,7 +56,7 @@ jobs:
         run: | 
           altserver/AltServer.app/Contents/MacOS/altsource update altsource.json \
           --ipa RainTweak.ipa \
-          --version-download-url ${{ steps.url.outputs.url }}
+          --version-download-url ${{ steps.url.outputs.url }} \
           --app-name Rain \
           --app-developer "Discord Inc. and Rain contributors" \
           --app-subtitle "A Discord client mod for mobile" \
