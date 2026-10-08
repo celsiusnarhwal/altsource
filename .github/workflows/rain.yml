@@ -69,7 +69,6 @@ jobs:
           --app-subtitle "A Discord client mod for mobile" \
           --app-tint-color "#5865F2" \
           --app-category social \
-          --version-description ${{ steps.rain.outputs.notes }}
       
       - name: Update AltSource (Manual)
         shell: uv run --with httpx2 python {0}
@@ -88,9 +87,11 @@ jobs:
           app["localizedDescription"] = "Rain is a Discord client mod for mobile.\n\n For more information, visit Rain's repository: https://codeberg.org/raincord/rain"
           app["iconURL"] = itunes_metadata["artworkUrl100"]
 
-          version_info = app["versions"][-1]
-          version_info["version"] = "${{ steps.rain.outputs.version }}"
-          version_info["date"] = "${{ steps.rain.outputs.date }}"
+          version_info = app["versions"][-1].update({
+            "version": "${{ steps.rain.outputs.version }}",
+            "date": "${{ steps.rain.outputs.date }}",
+            "description": "${{ steps.rain.outputs.notes }}",
+          })
 
           app["screenshots"] = {}
 
