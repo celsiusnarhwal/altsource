@@ -56,12 +56,13 @@ jobs:
         run: | 
           altserver/AltServer.app/Contents/MacOS/altsource update altsource.json \
           --ipa RainTweak.ipa \
+          --version-download-url ${{ steps.url.outputs.url }}
           --app-name Rain \
           --app-developer "Discord Inc. and Rain contributors" \
           --app-subtitle "A Discord client mod for mobile" \
           --app-description "Rain is a Discord client mod for mobile.\n\n For more information, visit Rain's repository: https://codeberg.org/raincord/rain" \
           --app-tint-color "#5865F2" \
-          --app-category social
+          --app-category social \
       
       - name: Create Pull Request
         id: pr
