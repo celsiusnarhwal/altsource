@@ -65,7 +65,7 @@ jobs:
           --app-category social \
       
       - name: Update AltSource (Manual)
-        shell: uv run --with httpx2 {0}
+        shell: uv run --with httpx python {0}
         run: |
           import json
           from pathlib import Path
@@ -79,7 +79,7 @@ jobs:
           itunes_metadata = httpx.get("https://itunes.apple.com/lookup?bundleId=com.hammerandchisel.discord").raise_for_status().json()["results"][0]
 
           app["iconURL"] = itunes_metadata["artworkUrl100"]
-          
+
           screenshots = altsource["apps"][-1]["screenshots"]
           screenshots["iphone"] = itunes_metadata["screenshotUrls"]
           screenshots["ipad"] = itunes_metadata["ipadScreenshotUrls"]
