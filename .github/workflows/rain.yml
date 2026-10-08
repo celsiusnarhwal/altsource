@@ -47,6 +47,7 @@ jobs:
             "url": next(asset["url"] for asset in release["assets"] if asset["name"] == "RainTweak.ipa"),
             "version": release["tagName"].lstrip("v"),
             "date": release["publishedAt"],
+            "notes": release["body"]
           }
 
           for key, value in outputs.items():
@@ -68,6 +69,7 @@ jobs:
           --app-subtitle "A Discord client mod for mobile" \
           --app-tint-color "#5865F2" \
           --app-category social \
+          --version-description ${{ steps.rain.outputs.notes }}
       
       - name: Update AltSource (Manual)
         shell: uv run --with httpx2 python {0}
