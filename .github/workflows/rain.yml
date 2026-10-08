@@ -34,29 +34,35 @@ jobs:
           curl -fsSLO --retry 5 --retry-delay 5 https://files.seika.computer/altserver.zip
           unzip altserver.zip -d altserver
       
-      - name: Get Rain IPA URL
-        id: url
+      - name: Get Rain Info
+        id: rain
         shell: uvx xonsh {0}
         run: |
           import json
           import os
 
-          assets = json.loads($(gh release view --json assets))["assets"]
-          url = next(asset["url"] for asset in assets if asset["name"] == "RainTweak.ipa")
+          release = json.loads($(gh release view --json assets,tagName,publishedAt))
 
-          print(f"url={url}", file=open(os.getenv("GITHUB_OUTPUT"), "a"))
+          outputs = {
+            "url": next(asset["url"] for asset in release["assets"] if asset["name"] == "RainTweak.ipa"),
+            "version": release["tagName"].lstrip("v"),
+            "date": release["publishedAt"],
+          }
+
+          for key, value in outputs.items():
+            print(f"{key}={value}", file=open(os.getenv("GITHUB_OUTPUT"), "a"))
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ra1ncord/RainTweak
       
       - name: Download Rain
-        run: curl -fsSLO ${{ steps.url.outputs.url }}
+        run: curl -fsSLO ${{ steps.rain.outputs.url }}
       
       - name: Update AltSource (altsource CLI)
         run: | 
           altserver/AltServer.app/Contents/MacOS/altsource update altsource.json \
           --ipa RainTweak.ipa \
-          --version-download-url ${{ steps.url.outputs.url }} \
+          --version-download-url ${{ steps.rain.outputs.url }} \
           --app-name Rain \
           --app-developer "Discord Inc. and Rain contributors" \
           --app-subtitle "A Discord client mod for mobile" \
@@ -79,6 +85,10 @@ jobs:
           app = altsource["apps"][-1]
           app["localizedDescription"] = "Rain is a Discord client mod for mobile.\n\n For more information, visit Rain's repository: https://codeberg.org/raincord/rain"
           app["iconURL"] = itunes_metadata["artworkUrl100"]
+
+          version_info = app["versions"][-1]
+          version_info["version"] = "${{ steps.rain.outputs.version }}"
+          version_info["date"] = "${{ steps.rain.outputs.date }}"
 
           app["screenshots"] = {}
 
