@@ -61,7 +61,7 @@ jobs:
           --app-subtitle "A Discord client mod for mobile" \
           --app-description "Rain is a Discord client mod for mobile.\n\n For more information, visit Rain's repository: https://codeberg.org/raincord/rain" \
           --app-tint-color "#5865F2" \
-          --category social
+          --app-category social
       
       - name: Create Pull Request
         id: pr
