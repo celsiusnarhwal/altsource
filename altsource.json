@@ -5,5 +5,71 @@
   "website": "https://celsiusnarhwal.dev",
   "tintColor": "#03CB9A",
   "nsfw": false,
-  "apps": []
+  "apps": [
+    {
+      "name": "Rain",
+      "bundleIdentifier": "com.hammerandchisel.discord",
+      "developerName": "Discord Inc. and Rain contributors",
+      "subtitle": "A Discord client mod for mobile",
+      "localizedDescription": "Rain is a Discord client mod for mobile.\\n\\n For more information, visit Rain's repository: https://codeberg.org/raincord/rain",
+      "iconURL": "https://picsum.photos/seed/com.hammerandchisel.discord/512/512",
+      "tintColor": "#5865F2",
+      "category": "social",
+      "screenshots": [
+        {
+          "imageURL": "https://picsum.photos/seed/com.hammerandchisel.discord_1/1284/2778",
+          "height": 2778,
+          "width": 1284
+        },
+        {
+          "imageURL": "https://picsum.photos/seed/com.hammerandchisel.discord_2/1284/2778",
+          "height": 2778,
+          "width": 1284
+        },
+        {
+          "imageURL": "https://picsum.photos/seed/com.hammerandchisel.discord_3/1284/2778",
+          "height": 2778,
+          "width": 1284
+        }
+      ],
+      "versions": [
+        {
+          "version": "344.1",
+          "date": "2026-10-08T13:26:34Z",
+          "localizedDescription": "Bug fixes and improvements.",
+          "downloadURL": "https://github.com/ra1ncord/RainTweak/releases/download/v1.2.0/RainTweak.ipa",
+          "size": 107065935,
+          "sha256": "98225b128f99c0ac0ffe810ddcb781c73f01da4ce56dbf640a52cf84df0d6549",
+          "minOSVersion": "16.0"
+        }
+      ],
+      "appPermissions": {
+        "privacy": {
+          "NSBluetoothAlwaysUsageDescription": "To connect to your devices",
+          "NSUserTrackingUsageDescription": "Allowing tracking helps us show you Quests for games you play or are interested in. You can opt out anytime in your iOS settings.",
+          "NSLocalNetworkUsageDescription": "Allow Discord access to your local network to find devices using the same internet connection.",
+          "NSLocationWhenInUseUsageDescription": "To enable services that require location",
+          "NSBluetoothPeripheralUsageDescription": "To connect to your devices",
+          "NSCameraUsageDescription": "By allowing access to your camera, you can take pictures and others will be able to see you in voice and video calls.",
+          "NSMicrophoneUsageDescription": "By allowing access to your microphone, you'll be able to talk in calls.",
+          "NSPhotoLibraryUsageDescription": "By allowing us access to your photos, you will be able to upload images as an avatar, server icon, and more, and you can send photos and videos to your friends and communities.",
+          "NSContactsUsageDescription": "We can help you find people you know on Discord. Your contacts will be regularly sent to us so you can connect with friends. You can turn this off any time.",
+          "NSLocationAlwaysUsageDescription": "To enable services that require location",
+          "NSLocationAlwaysAndWhenInUseUsageDescription": "To enable services that require location",
+          "NSPhotoLibraryAddUsageDescription": "By allowing access to your library, you'll be able to download photos and videos."
+        },
+        "entitlements": [
+          "com.apple.developer.usernotifications.communication",
+          "com.apple.developer.kernel.increased-memory-limit",
+          "com.apple.developer.networking.carrier-constrained.appcategory",
+          "com.apple.developer.avfoundation.multitasking-camera-access",
+          "com.apple.developer.declared-age-range",
+          "com.apple.security.application-groups",
+          "com.apple.developer.associated-domains",
+          "aps-environment",
+          "com.apple.developer.storekit.request-data"
+        ]
+      }
+    }
+  ]
 }
