@@ -26,7 +26,8 @@ jobs:
         with:
           oauth-client-id: ${{ secrets.TS_CLIENT_ID }}
           audience: ${{ secrets.TS_AUDIENCE }}
-          tags: tag:ci
+          tags: tag:github-actions
+          args: --accept-dns=false
           ping: seika
       
       - name: Download AltServer
