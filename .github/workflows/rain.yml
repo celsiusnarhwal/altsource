@@ -9,7 +9,7 @@ on:
 jobs:
   update:
     name: Update Rain
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     permissions:
       id-token: write
       contents: write
@@ -27,7 +27,6 @@ jobs:
           oauth-client-id: ${{ secrets.TS_CLIENT_ID }}
           audience: ${{ secrets.TS_AUDIENCE }}
           tags: tag:github-actions
-          args: --accept-dns=false
           ping: seika
       
       - name: Download AltServer
@@ -48,7 +47,7 @@ jobs:
           print(f"url={url}", file=open(os.getenv("GITHUB_OUTPUT", "a")))
         env:
           GH_TOKEN: ${{ github.token }}
-          GH_REPO: ra1ncord/RainTweakl
+          GH_REPO: ra1ncord/RainTweak
       
       - name: Download Rain
         run: curl -fsSLO ${{ steps.url.outputs.url }}
