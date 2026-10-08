@@ -32,7 +32,7 @@ jobs:
       
       - name: Download AltServer
         run: |
-          curl -fsSLO https://files.seika.computer/altserver.zip
+          curl -fsSLO --retry 5 --retry-delay 5 https://files.seika.computer/altserver.zip
           unzip altserver.zip
       
       - name: Get Rain IPA URL
