@@ -87,7 +87,7 @@ jobs:
               width, height = [int(i) for i in screenshot_url.split("/")[-1].split("bb")[0].split("x")]
               app["screenshots"].setdefault(device, []).append({"imageURL": screenshot_url, "width": width, "height": height})
 
-          altsource_file.write_text(json.dumps(altsource))
+          altsource_file.write_text(json.dumps(altsource, indent=2))
       
       - name: Create Pull Request
         id: pr
