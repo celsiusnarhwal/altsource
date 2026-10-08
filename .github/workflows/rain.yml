@@ -75,14 +75,11 @@ jobs:
           altsource_file = Path("altsource.json")
           altsource = json.loads(altsource_file.read_text())
 
-          app = altsource["apps"][-1]
           itunes_metadata = httpx.get("https://itunes.apple.com/lookup?bundleId=com.hammerandchisel.discord").raise_for_status().json()["results"][0]
 
+          app = altsource["apps"][-1]
           app["iconURL"] = itunes_metadata["artworkUrl100"]
-
-          screenshots = altsource["apps"][-1]["screenshots"]
-          screenshots["iphone"] = itunes_metadata["screenshotUrls"]
-          screenshots["ipad"] = itunes_metadata["ipadScreenshotUrls"]
+          app["screenshots"] = {"iphone": itunes_metadata["screenshotUrls"], "ipad": itunes_metadata["ipadScreenshotUrls"]}
 
           altsource_file.write_text(json.dumps(altsource))
       
