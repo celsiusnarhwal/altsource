@@ -65,7 +65,7 @@ jobs:
           --app-category social \
       
       - name: Update AltSource (Manual)
-        shell: uv run --with httpx python {0}
+        shell: uv run --with httpx2 python {0}
         run: |
           import json
           from pathlib import Path
