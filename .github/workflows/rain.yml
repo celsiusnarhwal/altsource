@@ -41,7 +41,7 @@ jobs:
           import json
           import os
 
-          release = json.loads($(gh release view --json assets,tagName,publishedAt))
+          release = json.loads($(gh release view --json assets,tagName,publishedAt,body))
 
           outputs = {
             "url": next(asset["url"] for asset in release["assets"] if asset["name"] == "RainTweak.ipa"),
