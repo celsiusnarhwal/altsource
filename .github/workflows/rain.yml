@@ -84,7 +84,7 @@ jobs:
 
           for device in ["iphone", "ipad"]:
             for screenshot_url in itunes_metadata["ipadscreenshotUrls" if device == "ipad" else "screenshotUrls"]:
-              width, height = [int(i) for i in screeenshot_url.split("/")[-1].split("bb")[0].split("x")]
+              width, height = [int(i) for i in screenshot_url.split("/")[-1].split("bb")[0].split("x")]
               app["screenshots"].setdefault(device, []).append({"imageURL": screenshot_url, "width": width, "height": height})
 
           altsource_file.write_text(json.dumps(altsource))
