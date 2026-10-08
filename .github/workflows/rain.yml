@@ -52,7 +52,7 @@ jobs:
       - name: Download Rain
         run: curl -fsSLO ${{ steps.url.outputs.url }}
       
-      - name: Update AltSource
+      - name: Update AltSource (altsource CLI)
         run: | 
           altserver/AltServer.app/Contents/MacOS/altsource update altsource.json \
           --ipa RainTweak.ipa \
@@ -63,6 +63,28 @@ jobs:
           --app-description "Rain is a Discord client mod for mobile.\n\n For more information, visit Rain's repository: https://codeberg.org/raincord/rain" \
           --app-tint-color "#5865F2" \
           --app-category social \
+      
+      - name: Update AltSource (Manual)
+        shell: uv run --with httpx2 {0}
+        run: |
+          import json
+          from pathlib import Path
+
+          import httpx2 as httpx
+
+          altsource_file = Path("altsource.json")
+          altsource = json.loads(altsource_file.read_text())
+
+          app = altsource["apps"][-1]
+          itunes_metadata = httpx.get("https://itunes.apple.com/lookup?bundleId=com.hammerandchisel.discord").raise_for_status().json()["results"][0]
+
+          app["iconURL"] = itunes_metadata["artworkUrl100"]
+          
+          screenshots = altsource["apps"][-1]["screenshots"]
+          screenshots["iphone"] = itunes_metadata["screenshotUrls"]
+          screenshots["ipad"] = itunes_metadata["ipadScreenshotUrls"]
+
+          altsource_file.write_text(json.dumps(altsource))
       
       - name: Create Pull Request
         id: pr
