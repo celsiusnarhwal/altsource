@@ -39,12 +39,11 @@ jobs:
         shell: uvx xonsh {0}
         run: |
           import json
-          import os
 
           assets = json.loads($(gh release view --json assets))["assets"]
           url = next(asset["url"] for asset in assets if asset["name"] == "RainTweak.ipa")
 
-          print(f"url={url}", file=open(os.getenv("GITHUB_OUTPUT"), "a"))
+          echo f"url={url}" >> ${GITHUB_OUTPUT}
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ra1ncord/RainTweak
