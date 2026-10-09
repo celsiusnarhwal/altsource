@@ -29,8 +29,10 @@ jobs:
           tags: tag:github-actions
           args: --accept-dns=false
           ping: seika
-
-      - run: nslookup files.seika.computer
+  
+        # https://github.com/tailscale/github-action/issues/315
+      - name: Restore DNS
+        run: sudo networksetup -setdnsservers Ethernet Empty
       
       - name: Download AltServer
         run: |
