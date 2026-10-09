@@ -29,6 +29,8 @@ jobs:
           tags: tag:github-actions
           args: --accept-dns=false
           ping: seika
+
+      - run: nslookup files.seika.computer
       
       - name: Download AltServer
         run: |
