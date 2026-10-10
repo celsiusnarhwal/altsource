@@ -71,28 +71,43 @@ jobs:
         shell: uv run --with httpx2 python {0}
         run: |
           import json
+          import re
           from pathlib import Path
-
+          
           import httpx2 as httpx
-
+          
           altsource_file = Path("altsource.json")
           altsource = json.loads(altsource_file.read_text())
-
-          itunes_metadata = httpx.get("https://itunes.apple.com/lookup?bundleId=com.hammerandchisel.discord").raise_for_status().json()["results"][0]
-
+          
+          itunes_metadata = (
+              httpx.get(
+                  "https://itunes.apple.com/lookup",
+                  params={"bundleId": "com.hammerandchisel.discord"},
+              )
+              .raise_for_status()
+              .json()["results"][0]
+          )
+          
           app = altsource["apps"][-1]
-          app["localizedDescription"] = "Rain is a Discord client mod for mobile.\n\n For more information, visit Rain's repository: https://codeberg.org/raincord/rain"
+          app["localizedDescription"] = (
+              "Rain is a Discord client mod for mobile.\n\n For more information, visit Rain's repository: https://codeberg.org/raincord/rain"
+          )
           app["iconURL"] = itunes_metadata["artworkUrl100"]
-
+          
           app["screenshots"] = {}
-
+          
           for device in ["iphone", "ipad"]:
-            for screenshot_url in itunes_metadata.get("ipadScreenshotUrls" if device == "ipad" else "screenshotUrls", []):
-              width, height = [int(i) for i in screenshot_url.split("/")[-1].split("bb")[0].split("x")]
-              app["screenshots"].setdefault(device, []).append({"imageURL": screenshot_url, "width": width, "height": height})
-
+              for screenshot_url in itunes_metadata.get(
+                  "ipadScreenshotUrls" if device == "ipad" else "screenshotUrls", []
+              ):
+                  width, height = [int(i) for i in re.findall(r"\d+x\d+", screenshot_url)]
+                  app["screenshots"].setdefault(device, []).append(
+                      {"imageURL": screenshot_url, "width": width, "height": height}
+                  )
+          
           altsource_file.write_text(json.dumps(altsource, indent=2))
-      
+
+
       - name: Create Pull Request
         id: pr
         uses: peter-evans/create-pull-request@v8
