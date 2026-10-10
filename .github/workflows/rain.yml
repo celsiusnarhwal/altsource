@@ -70,12 +70,10 @@ jobs:
       - name: Update AltSource (Manual)
         shell: uv run --with httpx2,pillow python {0}
         run: |
-          import contextlib
           import json
           import re
           import uuid
           from pathlib import Path
-          from tempfile import TemporaryDirectory
           
           import httpx2 as httpx
           from PIL import Image
@@ -100,19 +98,17 @@ jobs:
           
           app["screenshots"] = {}
           
-          with TemporaryDirectory() as tmpdir:
-            with contextlib.chdir(tmpdir):
-              for device in ["iphone", "ipad"]:
-                  for screenshot_url in itunes_metadata.get(
-                      "ipadScreenshotUrls" if device == "ipad" else "screenshotUrls", []
-                  ):
-                      screenshot_file = Path(uuid.uuid4().hex)
-                      screenshot_file.write_bytes(httpx.get(screenshot_url).raise_for_status().content)
-                      screenshot = Image.open(screenshot_file)
-                      
-                      app["screenshots"].setdefault(device, []).append(
-                          {"imageURL": screenshot_url, "width": screnshot.width, "height": screenshot.height}
-                      )
+          for device in ["iphone", "ipad"]:
+              for screenshot_url in itunes_metadata.get(
+                  "ipadScreenshotUrls" if device == "ipad" else "screenshotUrls", []
+              ):
+                  screenshot_file = Path(uuid.uuid4().hex)
+                  screenshot_file.write_bytes(httpx.get(screenshot_url).raise_for_status().content)
+                  screenshot = Image.open(screenshot_file)
+                  
+                  app["screenshots"].setdefault(device, []).append(
+                      {"imageURL": screenshot_url, "width": screenshot.width, "height": screenshot.height}
+                  )
           
           altsource_file.write_text(json.dumps(altsource, indent=2))
 
