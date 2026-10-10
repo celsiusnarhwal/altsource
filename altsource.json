@@ -90,16 +90,6 @@
           "size": 107065935,
           "sha256": "98225b128f99c0ac0ffe810ddcb781c73f01da4ce56dbf640a52cf84df0d6549",
           "minOSVersion": "16.0"
-        },
-        {
-          "version": "1.2.0",
-          "date": "2026-09-17T15:55:39Z",
-          "localizedDescription": "Bug fixes and improvements.",
-          "downloadURL": "https://github.com/ra1ncord/RainTweak/releases/download/v1.2.0/RainTweak.ipa",
-          "size": 107065935,
-          "sha256": "98225b128f99c0ac0ffe810ddcb781c73f01da4ce56dbf640a52cf84df0d6549",
-          "minOSVersion": "16.0",
-          "description": ""
         }
       ],
       "appPermissions": {
