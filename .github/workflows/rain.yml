@@ -73,7 +73,7 @@ jobs:
           uv run ${{ github.workspace }}/scripts/update.py \
           --ipa ${{ steps.ipa.outputs.name }} \
           --bundle-id com.hammerandchisel.discord \
-          --description "Rain is a Discord client mod for mobile.\n\n For more information, visit Rain's repository: https://codeberg.org/raincord/rain"
+          --description "Rain is a Discord client mod for mobile. For more information, visit Rain's repository: https://codeberg.org/raincord/rain"
 
       - name: Create Pull Request
         id: pr
