@@ -39,28 +39,29 @@ jobs:
           curl -fsSLO --retry 5 --retry-delay 5 https://files.seika.computer/altserver.zip
           unzip altserver.zip -d altserver
 
-      - name: Get YTKACE IPA URL
-        id: url
+      - name: Get IPA Info
+        id: ipa
         shell: uvx xonsh {0}
         run: |
           import json
 
           assets = json.loads($(gh release view --json assets))["assets"]
-          url = next(asset["url"] for asset in assets if asset["name"].endswith(".ipa"))
-
-          echo f"url={url}" >> $GITHUB_OUTPUT
+          ipa = next(asset for asset in assets if asset["name"].endswith(".ipa"))
+          
+          for key, value in ipa.items():
+            echo f"{key}={value}" >> $GITHUB_OUTPUT
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: itzzace/ytkace
 
       - name: Download YTKACE
-        run: curl -fsSL -o ytkace.ipa ${{ steps.url.outputs.url }}
+        run: curl -fsSL -o ${{ steps.ipa.outputs.name }} ${{ steps.ipa.outputs.url }}
 
       - name: Update AltSource (altsource CLI)
         run: |
           altserver/AltServer.app/Contents/MacOS/altsource update altsource.json \
-          --ipa ytkace.ipa \
-          --version-download-url ${{ steps.url.outputs.url }} \
+          --ipa ${{ steps.ipa.outputs.name }} \
+          --version-download-url ${{ steps.ipa.outputs.url }} \
           --app-name YTKACE \
           --app-developer "Google and YTKACE contributors" \
           --app-subtitle "A free and open-source YouTube enhancer" \
