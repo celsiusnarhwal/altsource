@@ -38,29 +38,30 @@ jobs:
         run: |
           curl -fsSLO --retry 5 --retry-delay 5 https://files.seika.computer/altserver.zip
           unzip altserver.zip -d altserver
-      
-      - name: Get Rain IPA URL
-        id: url
+
+      - name: Get IPA Info
+        id: ipa
         shell: uvx xonsh {0}
         run: |
           import json
 
           assets = json.loads($(gh release view --json assets))["assets"]
-          url = next(asset["url"] for asset in assets if asset["name"] == "RainTweak.ipa")
-
-          echo f"url={url}" >> $GITHUB_OUTPUT
+          ipa = next(asset for asset in assets if asset["name"].endswith(".ipa"))
+          
+          for key, value in ipa.items():
+            echo f"{key}={value}" >> $GITHUB_OUTPUT
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ra1ncord/RainTweak
-      
+
       - name: Download Rain
-        run: curl -fsSLO ${{ steps.url.outputs.url }}
+        run: curl -fsSLO ${{ steps.ipa.outputs.url }}
       
       - name: Update AltSource (altsource CLI)
         run: | 
           altserver/AltServer.app/Contents/MacOS/altsource update altsource.json \
-          --ipa RainTweak.ipa \
-          --version-download-url ${{ steps.url.outputs.url }} \
+          --ipa ${{ steps.ipa.outputs.name }} \
+          --version-download-url ${{ steps.ipa.outputs.url }} \
           --app-name Rain \
           --app-developer "Discord Inc. and Rain contributors" \
           --app-subtitle "A Discord client mod for mobile" \
