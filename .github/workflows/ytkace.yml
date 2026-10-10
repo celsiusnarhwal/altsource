@@ -73,7 +73,7 @@ jobs:
           uv run ${{ github.workspace }}/scripts/update.py \
           --ipa ${{ steps.ipa.outputs.name }} \
           --bundle-id com.google.ios.youtube \
-          --description "YTKACE is an enhancement mod for YouTube.\n\nFor more information, visit YTKACE's repository: https://github.com/itzzace/ytkace"
+          --description "YTKACE is an enhancement mod for YouTube. For more information, visit YTKACE's repository: https://github.com/itzzace/ytkace"
 
       - name: Create Pull Request
         id: pr
