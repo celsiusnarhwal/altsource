@@ -45,11 +45,13 @@ app = next(
     if app["bundleIdentifier"] == info_plist["CFBundleIdentifier"]
 )
 
-app.update = {
-    "localizedDescription": args.description,
-    "iconURL": itunes_metadata["artworkUrl100"],
-    "screenshots": {},
-}
+app.update(
+    {
+        "localizedDescription": args.description,
+        "iconURL": itunes_metadata["artworkUrl100"],
+        "screenshots": {},
+    }
+)
 
 for device in ["iphone", "ipad"]:
     for screenshot_url in itunes_metadata.get(
