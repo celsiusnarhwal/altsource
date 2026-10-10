@@ -108,7 +108,7 @@ jobs:
                   ):
                       screenshot_file = Path(uuid.uuid4().hex)
                       screenshot_file.write_bytes(httpx.get(screenshot_url).raise_for_status().content)
-                      screenshot = Image.open(image_file)
+                      screenshot = Image.open(screenshot_file)
                       
                       app["screenshots"].setdefault(device, []).append(
                           {"imageURL": screenshot_url, "width": screnshot.width, "height": screenshot.height}
