@@ -68,13 +68,15 @@ jobs:
           --app-category photo-video
 
       - name: Update AltSource (Manual)
-        shell: uv run --with httpx2 python {0}
+        shell: uv run --with httpx2,pillow python {0}
         run: |
           import json
           import re
+          from io import BytesIO
           from pathlib import Path
           
           import httpx2 as httpx
+          from PIL import Image
           
           altsource_file = Path("altsource.json")
           altsource = json.loads(altsource_file.read_text())
@@ -99,9 +101,10 @@ jobs:
               for screenshot_url in itunes_metadata.get(
                   "ipadScreenshotUrls" if device == "ipad" else "screenshotUrls", []
               ):
-                  width, height = [int(i) for i in re.findall(r"\d+x\d+", screenshot_url)[-1].split("x")]
+                  screenshot = Image.open(BytesIO(httpx.get(screenshot_url).raise_for_status().content))
+                  
                   app["screenshots"].setdefault(device, []).append(
-                      {"imageURL": screenshot_url, "width": width, "height": height}
+                      {"imageURL": screenshot_url, "width": screenshot.width, "height": screenshot.height}
                   )
           
           altsource_file.write_text(json.dumps(altsource, indent=2))
