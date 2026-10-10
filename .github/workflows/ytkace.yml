@@ -99,7 +99,7 @@ jobs:
               for screenshot_url in itunes_metadata.get(
                   "ipadScreenshotUrls" if device == "ipad" else "screenshotUrls", []
               ):
-                  width, height = [int(i) for i in re.findall(r"\d+x\d+", screenshot_url)[-1]]
+                  width, height = [int(i) for i in re.findall(r"\d+x\d+", screenshot_url)[-1].split("x")]
                   app["screenshots"].setdefault(device, []).append(
                       {"imageURL": screenshot_url, "width": width, "height": height}
                   )
