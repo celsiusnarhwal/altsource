@@ -46,7 +46,7 @@ jobs:
           import json
 
           assets = json.loads($(gh release view --json assets))["assets"]
-          url = next(asset["url"] for asset in assets if asset["name"] == "RainTweak.ipa")
+          url = next(asset["url"] for asset in assets if asset["name"].endswith(".ipa"))
 
           echo f"url={url}" >> $GITHUB_OUTPUT
         env:
