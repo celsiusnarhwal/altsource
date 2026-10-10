@@ -71,7 +71,7 @@ jobs:
       - name: Update AltSource (Manual)
         run: |
           uv run ${{ github.workspace }}/scripts/update.py \
-          --ipa ${{ steps.ipa.ouptuts.name }} \
+          --ipa ${{ steps.ipa.outputs.name }} \
           --bundle-id com.google.ios.youtube \
           --description "YTKACE is an enhancement mod for YouTube.\n\nFor more information, visit YTKACE's repository: https://github.com/itzzace/ytkace"
 
