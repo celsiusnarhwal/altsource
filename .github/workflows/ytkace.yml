@@ -55,7 +55,7 @@ jobs:
           GH_REPO: itzzace/ytkace
 
       - name: Download YTKACE
-        run: curl -fsSL -o ${{ steps.ipa.outputs.name }} ${{ steps.ipa.outputs.url }}
+        run: curl -fsSLO ${{ steps.ipa.outputs.url }}
 
       - name: Update AltSource (altsource CLI)
         run: |
