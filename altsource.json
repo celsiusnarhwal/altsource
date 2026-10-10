@@ -222,33 +222,33 @@
         }
       ],
       "appPermissions": {
-        "privacy": {
-          "NSLocationWhenInUseUsageDescription": "This enables local content discovery, improved recommendations, and enhanced search results.",
-          "NSAppleMusicUsageDescription": "This lets you add your own audio files to your videos.",
-          "NSContactsUsageDescription": "Your contacts will be sent to YouTube servers to help you find friends to share videos with.",
-          "NSLocalNetworkUsageDescription": "Access to your network allows YouTube to discover and connect to devices such as your TV.",
-          "NSMicrophoneUsageDescription": "This lets you include audio with your videos and search using your voice.",
-          "NSCameraUsageDescription": "This lets you create videos using the app.",
-          "NSUserTrackingUsageDescription": "To personalize ads and provide ad measurement, YouTube will link activity from this app with activity from non-Google apps and websites.",
-          "NSPhotoLibraryUsageDescription": "This lets you upload media you've already created.",
-          "NSBluetoothPeripheralUsageDescription": "YouTube needs bluetooth access to scan for nearby Cast devices."
-        },
         "entitlements": [
-          "com.apple.developer.usernotifications.communication",
+          "keychain-access-groups",
           "aps-environment",
-          "com.apple.developer.group-session",
-          "com.apple.developer.networking.wifi-info",
-          "com.apple.developer.coremedia.allow-alternate-video-decoder-selection",
-          "com.apple.developer.usernotifications.time-sensitive",
-          "com.apple.developer.device-information.user-assigned-device-name",
           "com.apple.security.application-groups",
           "com.apple.developer.declared-age-range",
-          "com.apple.developer.storekit.request-data",
+          "com.apple.developer.usernotifications.time-sensitive",
           "com.apple.developer.networking.multicast",
-          "keychain-access-groups",
+          "com.apple.developer.storekit.request-data",
+          "com.apple.developer.coremedia.allow-alternate-video-decoder-selection",
+          "com.apple.developer.siri",
+          "com.apple.developer.usernotifications.communication",
           "com.apple.developer.associated-domains",
-          "com.apple.developer.siri"
-        ]
+          "com.apple.developer.networking.wifi-info",
+          "com.apple.developer.group-session",
+          "com.apple.developer.device-information.user-assigned-device-name"
+        ],
+        "privacy": {
+          "NSAppleMusicUsageDescription": "This lets you add your own audio files to your videos.",
+          "NSBluetoothPeripheralUsageDescription": "YouTube needs bluetooth access to scan for nearby Cast devices.",
+          "NSLocationWhenInUseUsageDescription": "This enables local content discovery, improved recommendations, and enhanced search results.",
+          "NSPhotoLibraryUsageDescription": "This lets you upload media you've already created.",
+          "NSContactsUsageDescription": "Your contacts will be sent to YouTube servers to help you find friends to share videos with.",
+          "NSUserTrackingUsageDescription": "To personalize ads and provide ad measurement, YouTube will link activity from this app with activity from non-Google apps and websites.",
+          "NSMicrophoneUsageDescription": "This lets you include audio with your videos and search using your voice.",
+          "NSCameraUsageDescription": "This lets you create videos using the app.",
+          "NSLocalNetworkUsageDescription": "Access to your network allows YouTube to discover and connect to devices such as your TV."
+        }
       }
     }
   ]
