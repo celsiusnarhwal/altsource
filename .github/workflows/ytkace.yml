@@ -1,0 +1,121 @@
+name: Update YTKACE
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+
+  workflow_dispatch:
+
+jobs:
+  update:
+    name: Update YTKACE
+    runs-on: macos-latest
+    permissions:
+      id-token: write
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Clone ${{ github.repository }}
+        uses: actions/checkout@v7
+
+      - name: Set Up uv
+        uses: astral-sh/setup-uv@v10.2.0
+
+      - name: Connect to Tailscale
+        uses: tailscale/github-action@v4
+        with:
+          oauth-client-id: ${{ secrets.TS_CLIENT_ID }}
+          audience: ${{ secrets.TS_AUDIENCE }}
+          tags: tag:github-actions
+          args: --accept-dns=false
+          ping: seika
+
+        # https://github.com/tailscale/github-action/issues/315
+      - name: Restore DNS
+        run: sudo networksetup -setdnsservers Ethernet Empty
+
+      - name: Download AltServer
+        run: |
+          curl -fsSLO --retry 5 --retry-delay 5 https://files.seika.computer/altserver.zip
+          unzip altserver.zip -d altserver
+
+      - name: Get YTKACE IPA URL
+        id: url
+        shell: uvx xonsh {0}
+        run: |
+          import json
+
+          assets = json.loads($(gh release view --json assets))["assets"]
+          url = next(asset["url"] for asset in assets if asset["name"] == "RainTweak.ipa")
+
+          echo f"url={url}" >> $GITHUB_OUTPUT
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: itzzace/ytkace
+
+      - name: Download YTKACE
+        run: curl -fsSL -o ytkace.ipa ${{ steps.url.outputs.url }}
+
+      - name: Update AltSource (altsource CLI)
+        run: |
+          altserver/AltServer.app/Contents/MacOS/altsource update altsource.json \
+          --ipa ytkace.ipa \
+          --version-download-url ${{ steps.url.outputs.url }} \
+          --app-name YTKACE \
+          --app-developer "Google and YTKACE contributors" \
+          --app-subtitle "A free and open-source YouTube enhancer" \
+          --app-tint-color "#FF0033" \
+          --app-category photo-video
+
+      - name: Update AltSource (Manual)
+        shell: uv run --with httpx2 python {0}
+        run: |
+          import json
+          import re
+          from pathlib import Path
+          
+          import httpx2 as httpx
+          
+          altsource_file = Path("altsource.json")
+          altsource = json.loads(altsource_file.read_text())
+          
+          itunes_metadata = (
+              httpx.get(
+                  "https://itunes.apple.com/lookup", params={"bundleId": "com.google.ios.youtube"}
+              )
+              .raise_for_status()
+              .json()["results"][0]
+          )
+          
+          app = altsource["apps"][-1]
+          app["localizedDescription"] = (
+              "YTKACE is an enhancement mod for YouTube.\n\nFor more information, visit YTKACE's repository: https://github.com/itzzace/ytkace"
+          )
+          app["iconURL"] = itunes_metadata["artworkUrl100"]
+          
+          app["screenshots"] = {}
+          
+          for device in ["iphone", "ipad"]:
+              for screenshot_url in itunes_metadata.get(
+                  "ipadScreenshotUrls" if device == "ipad" else "screenshotUrls", []
+              ):
+                  width, height = [int(i) for i in re.findall(r"\d+x\d+", screenshot_url)[-1]]
+                  app["screenshots"].setdefault(device, []).append(
+                      {"imageURL": screenshot_url, "width": width, "height": height}
+                  )
+          
+          altsource_file.write_text(json.dumps(altsource, indent=2))
+
+
+      - name: Create Pull Request
+        id: pr
+        uses: peter-evans/create-pull-request@v8
+        with:
+          add-paths: altsource.json
+          sign-commits: true
+
+      - name: Merge Pull Request
+        if: ${{ steps.pr.outputs.pull-request-number }}
+        run: gh pr merge --squash ${{ steps.pr.outputs.pull-request-number }}
+        env:
+          GH_TOKEN: ${{ github.token }}
