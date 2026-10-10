@@ -65,7 +65,7 @@ jobs:
           --app-developer "Discord Inc. and Rain contributors" \
           --app-subtitle "A Discord client mod for mobile" \
           --app-tint-color "#5865F2" \
-          --app-category social \
+          --app-category social
       
       - name: Update AltSource (Manual)
         shell: uv run --with httpx2 python {0}
