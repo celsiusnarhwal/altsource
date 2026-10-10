@@ -71,7 +71,6 @@ jobs:
         shell: uv run --with httpx2,pillow python {0}
         run: |
           import json
-          import re
           from io import BytesIO
           from pathlib import Path
           
