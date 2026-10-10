@@ -69,46 +69,7 @@ jobs:
           --app-category photo-video
 
       - name: Update AltSource (Manual)
-        shell: uv run --with httpx2,pillow python {0}
-        run: |
-          import json
-          from io import BytesIO
-          from pathlib import Path
-          
-          import httpx2 as httpx
-          from PIL import Image
-          
-          altsource_file = Path("altsource.json")
-          altsource = json.loads(altsource_file.read_text())
-          
-          itunes_metadata = (
-              httpx.get(
-                  "https://itunes.apple.com/lookup", params={"bundleId": "com.google.ios.youtube"}
-              )
-              .raise_for_status()
-              .json()["results"][0]
-          )
-          
-          app = altsource["apps"][-1]
-          app["localizedDescription"] = (
-              "YTKACE is an enhancement mod for YouTube.\n\nFor more information, visit YTKACE's repository: https://github.com/itzzace/ytkace"
-          )
-          app["iconURL"] = itunes_metadata["artworkUrl100"]
-          
-          app["screenshots"] = {}
-          
-          for device in ["iphone", "ipad"]:
-              for screenshot_url in itunes_metadata.get(
-                  "ipadScreenshotUrls" if device == "ipad" else "screenshotUrls", []
-              ):
-                  screenshot = Image.open(BytesIO(httpx.get(screenshot_url).raise_for_status().content))
-                  
-                  app["screenshots"].setdefault(device, []).append(
-                      {"imageURL": screenshot_url, "width": screenshot.width, "height": screenshot.height}
-                  )
-          
-          altsource_file.write_text(json.dumps(altsource, indent=2))
-
+        run: uv run ${{ github.workspace }}/scripts/update.py
 
       - name: Create Pull Request
         id: pr
