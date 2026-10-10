@@ -72,8 +72,7 @@ jobs:
         run: |
           import json
           import re
-          import uuid
-          from pathlib import Path
+          from io import BytesIO
           
           import httpx2 as httpx
           from PIL import Image
@@ -102,9 +101,7 @@ jobs:
               for screenshot_url in itunes_metadata.get(
                   "ipadScreenshotUrls" if device == "ipad" else "screenshotUrls", []
               ):
-                  screenshot_file = Path(uuid.uuid4().hex)
-                  screenshot_file.write_bytes(httpx.get(screenshot_url).raise_for_status().content)
-                  screenshot = Image.open(screenshot_file)
+                  screenshot = Image.open(BytesIO(httpx.get(screenshot_url).raise_for_status().content))
                   
                   app["screenshots"].setdefault(device, []).append(
                       {"imageURL": screenshot_url, "width": screenshot.width, "height": screenshot.height}
