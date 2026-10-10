@@ -93,31 +93,31 @@
         }
       ],
       "appPermissions": {
-        "entitlements": [
-          "com.apple.developer.declared-age-range",
-          "com.apple.developer.associated-domains",
-          "com.apple.developer.networking.carrier-constrained.appcategory",
-          "com.apple.developer.avfoundation.multitasking-camera-access",
-          "com.apple.developer.storekit.request-data",
-          "aps-environment",
-          "com.apple.security.application-groups",
-          "com.apple.developer.usernotifications.communication",
-          "com.apple.developer.kernel.increased-memory-limit"
-        ],
         "privacy": {
-          "NSLocationAlwaysAndWhenInUseUsageDescription": "To enable services that require location",
           "NSCameraUsageDescription": "By allowing access to your camera, you can take pictures and others will be able to see you in voice and video calls.",
           "NSContactsUsageDescription": "We can help you find people you know on Discord. Your contacts will be regularly sent to us so you can connect with friends. You can turn this off any time.",
           "NSUserTrackingUsageDescription": "Allowing tracking helps us show you Quests for games you play or are interested in. You can opt out anytime in your iOS settings.",
-          "NSLocationWhenInUseUsageDescription": "To enable services that require location",
           "NSBluetoothPeripheralUsageDescription": "To connect to your devices",
-          "NSBluetoothAlwaysUsageDescription": "To connect to your devices",
-          "NSLocalNetworkUsageDescription": "Allow Discord access to your local network to find devices using the same internet connection.",
-          "NSPhotoLibraryAddUsageDescription": "By allowing access to your library, you'll be able to download photos and videos.",
+          "NSLocationWhenInUseUsageDescription": "To enable services that require location",
           "NSMicrophoneUsageDescription": "By allowing access to your microphone, you'll be able to talk in calls.",
+          "NSPhotoLibraryAddUsageDescription": "By allowing access to your library, you'll be able to download photos and videos.",
+          "NSLocationAlwaysAndWhenInUseUsageDescription": "To enable services that require location",
+          "NSLocationAlwaysUsageDescription": "To enable services that require location",
           "NSPhotoLibraryUsageDescription": "By allowing us access to your photos, you will be able to upload images as an avatar, server icon, and more, and you can send photos and videos to your friends and communities.",
-          "NSLocationAlwaysUsageDescription": "To enable services that require location"
-        }
+          "NSLocalNetworkUsageDescription": "Allow Discord access to your local network to find devices using the same internet connection.",
+          "NSBluetoothAlwaysUsageDescription": "To connect to your devices"
+        },
+        "entitlements": [
+          "com.apple.developer.networking.carrier-constrained.appcategory",
+          "com.apple.developer.avfoundation.multitasking-camera-access",
+          "aps-environment",
+          "com.apple.developer.declared-age-range",
+          "com.apple.developer.usernotifications.communication",
+          "com.apple.developer.storekit.request-data",
+          "com.apple.developer.kernel.increased-memory-limit",
+          "com.apple.security.application-groups",
+          "com.apple.developer.associated-domains"
+        ]
       }
     },
     {
@@ -125,88 +125,73 @@
       "bundleIdentifier": "com.google.ios.youtube",
       "developerName": "Google and YTKACE contributors",
       "subtitle": "A free and open-source YouTube enhancer",
-      "localizedDescription": "YTKACE is an enhancement mod for YouTube.\n\nFor more information, visit YTKACE's repository: https://github.com/itzzace/ytkace",
-      "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/91/e3/6d/91e36d95-56fd-4162-3ab5-1fd5e18db785/logo_youtube_2024_q4_color-0-0-1x_U007emarketing-0-0-0-7-0-0-0-85-220.png/100x100bb.jpg",
+      "localizedDescription": "Rain is a Discord client mod for mobile.\n\n For more information, visit Rain's repository: https://codeberg.org/raincord/rain",
+      "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/37/35/3a/37353aac-9951-768d-48bc-5097346a0cb5/AppIcon-0-0-1x_U007epad-0-1-0-sRGB-85-220.png/100x100bb.jpg",
       "tintColor": "#FF0033",
       "category": "photo-video",
       "screenshots": {
         "iphone": [
           {
-            "imageURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/e8/5d/12/e85d121e-8bcf-4f57-cf07-ed23b57f1b30/f1192f1f-430d-469a-b032-cdf77b8b04c7_iOS-5.5-in_1.jpg/392x696bb.jpg",
+            "imageURL": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ad/d3/b2/add3b237-7c40-ff98-a316-dd24f749cb27/1242x2208_-_1_GroupChat.png/392x696bb.png",
             "width": 392,
             "height": 696
           },
           {
-            "imageURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/2d/da/fa/2ddafabb-ad03-eda7-417f-6a22418551d0/868afd15-b2e4-4923-b0f8-c5599327a3d7_iOS-5.5-in_2.jpg/392x696bb.jpg",
+            "imageURL": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/46/e6/e9/46e6e9bc-4c8d-d1ff-9e84-b7a29f6503cb/1242x2208_-_2_Stream.png/392x696bb.png",
             "width": 392,
             "height": 696
           },
           {
-            "imageURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/f4/b6/02/f4b602e0-04b4-60ff-7960-d8ba227dc980/2930dbc3-4228-403b-b46d-e0066516ab6a_iOS-5.5-in_3.jpg/392x696bb.jpg",
+            "imageURL": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f5/0a/31/f50a314d-a0ae-7960-689d-22200091e98e/1242x2208_-_3_SeeWhos.png/392x696bb.png",
             "width": 392,
             "height": 696
           },
           {
-            "imageURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/af/60/bd/af60bd87-4c94-1f9c-2af5-099ca41c2eba/45519fca-0e0b-466e-9ed6-9a43232a0bf8_iOS-5.5-in_4.jpg/392x696bb.jpg",
+            "imageURL": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a3/07/f9/a307f9e1-6205-39cd-ddba-b12ffa34c721/1242x2208_-_4_HopIn.png/392x696bb.png",
             "width": 392,
             "height": 696
           },
           {
-            "imageURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/cc/93/ac/cc93ac38-9f1f-364b-2127-a53f30a735e2/bace9abd-71f3-4700-8adf-cedcba275a67_iOS-5.5-in_5.jpg/392x696bb.jpg",
+            "imageURL": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c0/b7/27/c0b72782-3559-0f3c-a1fe-8592abfac58d/1242x2208_-_5_ToDos.png/392x696bb.png",
+            "width": 392,
+            "height": 696
+          },
+          {
+            "imageURL": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/51/a5/ea/51a5eaf2-9811-e47d-2b80-a8e80ce819a7/1242x2208_-_6_GameHere.png/392x696bb.png",
             "width": 392,
             "height": 696
           }
         ],
         "ipad": [
           {
-            "imageURL": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c1/38/66/c13866f1-ce2c-522c-a3f4-ecd6d6cdcc31/874e4458-7af3-45b9-8cd2-bf7ff6d03817_2048x2732bb__U00281_U0029.png/576x768bb.png",
-            "width": 576,
-            "height": 768
+            "imageURL": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/35/bf/dd/35bfdd33-f380-2a52-6358-1b9ca868beb3/_U005bTablet_U005d_13_U201d_-_2752_x_2064_-_1_GroupChat.png/360x480bb.jpg",
+            "width": 360,
+            "height": 270
           },
           {
-            "imageURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/41/96/bd/4196bd53-1c67-b384-d1e7-1c0368764261/mzl.soxnenam.jpg/576x768bb.jpg",
-            "width": 576,
-            "height": 768
+            "imageURL": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ab/f7/53/abf75305-3c18-1345-f132-379730614afc/_Tablet__13__-_2752_x_2064_-_2_Stream.png/360x480bb.jpg",
+            "width": 360,
+            "height": 270
           },
           {
-            "imageURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/fc/66/f9/fc66f90a-3b78-7ba6-d824-db2a8d1fb7cd/mzl.odjiekca.jpg/576x768bb.jpg",
-            "width": 576,
-            "height": 768
+            "imageURL": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/8d/ec/50/8dec50d6-9787-e842-9eee-dcc9dd33b729/_U005bTablet_U005d_13_U201d_-_2752_x_2064_-_3_SeeWhos.png/360x480bb.jpg",
+            "width": 360,
+            "height": 270
           },
           {
-            "imageURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a6/39/7b/a6397bb4-6abc-d73c-7f4c-dc05294aa316/mzl.xgpxsdbq.jpg/576x768bb.jpg",
-            "width": 576,
-            "height": 768
+            "imageURL": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/5d/d2/3a/5dd23a70-a651-4a33-69d0-26af89ac4208/_U005bTablet_U005d_13_U201d_-_2752_x_2064_-_4_HopIn.png/360x480bb.jpg",
+            "width": 360,
+            "height": 270
           },
           {
-            "imageURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/64/ae/ac/64aeac08-0dbf-d177-9afe-07613a1e7bd6/mzl.monqskwz.jpg/576x768bb.jpg",
-            "width": 576,
-            "height": 768
+            "imageURL": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/20/76/ac/2076ac52-3532-56ed-d302-1d42706de5d3/_Tablet__13__-_2752_x_2064_-_5_ToDo.png/360x480bb.jpg",
+            "width": 360,
+            "height": 270
           },
           {
-            "imageURL": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/65/a8/40/65a840e9-3c6e-8008-eb58-fd86464d593b/iOS-iPad-Pro_2ndgen_1.jpg/576x768bb.jpg",
-            "width": 576,
-            "height": 768
-          },
-          {
-            "imageURL": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/05/b4/bd/05b4bde7-d28d-41d0-805f-9a68e30db18a/iOS-iPad-Pro_2ndgen_2.jpg/576x768bb.jpg",
-            "width": 576,
-            "height": 768
-          },
-          {
-            "imageURL": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/e5/45/c1/e545c1f8-789b-a0c8-25aa-9397baee32cd/iOS-iPad-Pro_2ndgen_3.jpg/576x768bb.jpg",
-            "width": 576,
-            "height": 768
-          },
-          {
-            "imageURL": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/2c/95/6a/2c956aaf-05ae-d4e4-b266-a745d475e30a/iOS-iPad-Pro_2ndgen_4.jpg/576x768bb.jpg",
-            "width": 576,
-            "height": 768
-          },
-          {
-            "imageURL": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b7/80/94/b780948a-615a-b8d7-c75e-61593d082889/iOS-iPad-Pro_2ndgen_5.jpg/576x768bb.jpg",
-            "width": 576,
-            "height": 768
+            "imageURL": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/72/80/74/72807442-47b1-9c8b-b1be-d844b5d96519/_U005bTablet_U005d_13_U201d_-_2752_x_2064_-_6_Gamehere.png/360x480bb.jpg",
+            "width": 360,
+            "height": 270
           }
         ]
       },
