@@ -68,13 +68,17 @@ jobs:
           --app-category social
       
       - name: Update AltSource (Manual)
-        shell: uv run --with httpx2 python {0}
+        shell: uv run --with httpx2,pillow python {0}
         run: |
+          import contextlib
           import json
           import re
+          import uuid
           from pathlib import Path
+          from tempfile import TemporaryDirectory
           
           import httpx2 as httpx
+          from PIL import Image
           
           altsource_file = Path("altsource.json")
           altsource = json.loads(altsource_file.read_text())
@@ -96,14 +100,19 @@ jobs:
           
           app["screenshots"] = {}
           
-          for device in ["iphone", "ipad"]:
-              for screenshot_url in itunes_metadata.get(
-                  "ipadScreenshotUrls" if device == "ipad" else "screenshotUrls", []
-              ):
-                  width, height = [int(i) for i in re.findall(r"\d+x\d+", screenshot_url)[-1].split("x")]
-                  app["screenshots"].setdefault(device, []).append(
-                      {"imageURL": screenshot_url, "width": width, "height": height}
-                  )
+          with TemporaryDirectory() as tmpdir:
+            with contextlib.chdir(tmpdir):
+              for device in ["iphone", "ipad"]:
+                  for screenshot_url in itunes_metadata.get(
+                      "ipadScreenshotUrls" if device == "ipad" else "screenshotUrls", []
+                  ):
+                      screenshot_file = Path(uuid.uuid4().hex)
+                      screenshot_file.write_bytes(httpx.get(screenshot_file).raise_for_status().content)
+                      screenshot = Image.open(image_file)
+                      
+                      app["screenshots"].setdefault(device, []).append(
+                          {"imageURL": screenshot_url, "width": screnshot.width, "height": screenshot.height}
+                      )
           
           altsource_file.write_text(json.dumps(altsource, indent=2))
 
