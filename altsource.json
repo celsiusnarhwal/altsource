@@ -126,7 +126,7 @@
       "developerName": "Google and YTKACE contributors",
       "subtitle": "A free and open-source YouTube enhancer",
       "localizedDescription": "YTKACE is an enhancement mod for YouTube. For more information, visit YTKACE's repository: https://github.com/itzzace/ytkace",
-      "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/91/e3/6d/91e36d95-56fd-4162-3ab5-1fd5e18db785/logo_youtube_2024_q4_color-0-0-1x_U007emarketing-0-0-0-7-0-0-0-85-220.png/100x100bb.jpg",
+      "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/82/43/be/8243be7f-17c3-33ae-720a-ffcde48bed61/logo_youtube_2024_q4_color-0-0-1x_U007emarketing-0-0-0-7-0-0-0-85-220.png/100x100bb.jpg",
       "tintColor": "#FF0033",
       "category": "photo-video",
       "screenshots": {
@@ -212,6 +212,15 @@
       },
       "versions": [
         {
+          "version": "21.42.4",
+          "date": "2026-11-01T04:21:26Z",
+          "localizedDescription": "Bug fixes and improvements.",
+          "downloadURL": "https://github.com/itzzace/ytkace/releases/download/v1.1.4/YTKACE_1.1.4_YouTube_21.42.4.ipa",
+          "size": 138006169,
+          "sha256": "a7bd1ab52d34254df33b5f2479b7969bfcd538fc0bf10fb61a0f8cf13f83180f",
+          "minOSVersion": "17.0"
+        },
+        {
           "version": "21.40.5",
           "date": "2026-10-10T18:42:29Z",
           "localizedDescription": "Bug fixes and improvements.",
@@ -222,33 +231,33 @@
         }
       ],
       "appPermissions": {
-        "privacy": {
-          "NSPhotoLibraryUsageDescription": "This lets you upload media you've already created.",
-          "NSAppleMusicUsageDescription": "This lets you add your own audio files to your videos.",
-          "NSBluetoothPeripheralUsageDescription": "YouTube needs bluetooth access to scan for nearby Cast devices.",
-          "NSMicrophoneUsageDescription": "This lets you include audio with your videos and search using your voice.",
-          "NSContactsUsageDescription": "Your contacts will be sent to YouTube servers to help you find friends to share videos with.",
-          "NSLocalNetworkUsageDescription": "Access to your network allows YouTube to discover and connect to devices such as your TV.",
-          "NSUserTrackingUsageDescription": "To personalize ads and provide ad measurement, YouTube will link activity from this app with activity from non-Google apps and websites.",
-          "NSLocationWhenInUseUsageDescription": "This enables local content discovery, improved recommendations, and enhanced search results.",
-          "NSCameraUsageDescription": "This lets you create videos using the app."
-        },
         "entitlements": [
-          "com.apple.developer.siri",
-          "com.apple.developer.associated-domains",
-          "com.apple.developer.usernotifications.time-sensitive",
+          "com.apple.developer.networking.wifi-info",
+          "com.apple.developer.group-session",
+          "com.apple.developer.coremedia.allow-alternate-video-decoder-selection",
+          "com.apple.security.application-groups",
           "keychain-access-groups",
           "com.apple.developer.usernotifications.communication",
-          "com.apple.developer.networking.wifi-info",
-          "aps-environment",
           "com.apple.developer.networking.multicast",
-          "com.apple.developer.device-information.user-assigned-device-name",
           "com.apple.developer.declared-age-range",
-          "com.apple.developer.group-session",
+          "com.apple.developer.associated-domains",
+          "com.apple.developer.device-information.user-assigned-device-name",
           "com.apple.developer.storekit.request-data",
-          "com.apple.developer.coremedia.allow-alternate-video-decoder-selection",
-          "com.apple.security.application-groups"
-        ]
+          "com.apple.developer.usernotifications.time-sensitive",
+          "com.apple.developer.siri",
+          "aps-environment"
+        ],
+        "privacy": {
+          "NSLocalNetworkUsageDescription": "Access to your network allows YouTube to discover and connect to devices such as your TV.",
+          "NSLocationWhenInUseUsageDescription": "This enables local content discovery, improved recommendations, and enhanced search results.",
+          "NSMicrophoneUsageDescription": "This lets you include audio with your videos and search using your voice.",
+          "NSCameraUsageDescription": "This lets you create videos using the app.",
+          "NSContactsUsageDescription": "Your contacts will be sent to YouTube servers to help you find friends to share videos with.",
+          "NSUserTrackingUsageDescription": "To personalize ads and provide ad measurement, YouTube will link activity from this app with activity from non-Google apps and websites.",
+          "NSPhotoLibraryUsageDescription": "This lets you upload media you've already created.",
+          "NSAppleMusicUsageDescription": "This lets you add your own audio files to your videos.",
+          "NSBluetoothPeripheralUsageDescription": "YouTube needs bluetooth access to scan for nearby Cast devices."
+        }
       }
     }
   ]
