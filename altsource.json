@@ -12,7 +12,7 @@
       "developerName": "Discord Inc. and Rain contributors",
       "subtitle": "A Discord client mod for mobile",
       "localizedDescription": "Rain is a Discord client mod for mobile. For more information, visit Rain's repository: https://codeberg.org/raincord/rain",
-      "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/69/3b/7e/693b7e6b-55ba-51ba-2608-6b38dabd6021/AppIcon-0-0-1x_U007epad-0-1-0-sRGB-85-220.png/100x100bb.jpg",
+      "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/65/9c/e0/659ce065-5dd8-eb35-378f-217d9658f6d9/AppIcon-0-0-1x_U007epad-0-1-0-85-220.png/100x100bb.jpg",
       "tintColor": "#5865F2",
       "category": "social",
       "screenshots": {
@@ -93,31 +93,31 @@
         }
       ],
       "appPermissions": {
+        "entitlements": [
+          "com.apple.developer.kernel.increased-memory-limit",
+          "com.apple.security.application-groups",
+          "com.apple.developer.associated-domains",
+          "com.apple.developer.declared-age-range",
+          "com.apple.developer.storekit.request-data",
+          "com.apple.developer.avfoundation.multitasking-camera-access",
+          "com.apple.developer.networking.carrier-constrained.appcategory",
+          "aps-environment",
+          "com.apple.developer.usernotifications.communication"
+        ],
         "privacy": {
-          "NSMicrophoneUsageDescription": "By allowing access to your microphone, you'll be able to talk in calls.",
-          "NSLocalNetworkUsageDescription": "Allow Discord access to your local network to find devices using the same internet connection.",
-          "NSLocationWhenInUseUsageDescription": "To enable services that require location",
-          "NSLocationAlwaysAndWhenInUseUsageDescription": "To enable services that require location",
-          "NSBluetoothPeripheralUsageDescription": "To connect to your devices",
-          "NSCameraUsageDescription": "By allowing access to your camera, you can take pictures and others will be able to see you in voice and video calls.",
-          "NSLocationAlwaysUsageDescription": "To enable services that require location",
           "NSBluetoothAlwaysUsageDescription": "To connect to your devices",
           "NSContactsUsageDescription": "We can help you find people you know on Discord. Your contacts will be regularly sent to us so you can connect with friends. You can turn this off any time.",
+          "NSPhotoLibraryAddUsageDescription": "By allowing access to your library, you'll be able to download photos and videos.",
+          "NSCameraUsageDescription": "By allowing access to your camera, you can take pictures and others will be able to see you in voice and video calls.",
+          "NSLocationAlwaysUsageDescription": "To enable services that require location",
+          "NSLocationWhenInUseUsageDescription": "To enable services that require location",
           "NSUserTrackingUsageDescription": "Allowing tracking helps us show you Quests for games you play or are interested in. You can opt out anytime in your iOS settings.",
           "NSPhotoLibraryUsageDescription": "By allowing us access to your photos, you will be able to upload images as an avatar, server icon, and more, and you can send photos and videos to your friends and communities.",
-          "NSPhotoLibraryAddUsageDescription": "By allowing access to your library, you'll be able to download photos and videos."
-        },
-        "entitlements": [
-          "com.apple.developer.usernotifications.communication",
-          "com.apple.developer.kernel.increased-memory-limit",
-          "com.apple.developer.avfoundation.multitasking-camera-access",
-          "aps-environment",
-          "com.apple.developer.associated-domains",
-          "com.apple.security.application-groups",
-          "com.apple.developer.networking.carrier-constrained.appcategory",
-          "com.apple.developer.storekit.request-data",
-          "com.apple.developer.declared-age-range"
-        ]
+          "NSMicrophoneUsageDescription": "By allowing access to your microphone, you'll be able to talk in calls.",
+          "NSLocationAlwaysAndWhenInUseUsageDescription": "To enable services that require location",
+          "NSBluetoothPeripheralUsageDescription": "To connect to your devices",
+          "NSLocalNetworkUsageDescription": "Allow Discord access to your local network to find devices using the same internet connection."
+        }
       }
     },
     {
