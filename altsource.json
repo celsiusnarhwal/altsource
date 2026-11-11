@@ -212,6 +212,15 @@
       },
       "versions": [
         {
+          "version": "21.45.4",
+          "date": "2026-11-11T04:41:17Z",
+          "localizedDescription": "Bug fixes and improvements.",
+          "downloadURL": "https://github.com/itzzace/ytkace/releases/download/v1.1.7/YTKACE_1.1.7_YouTube_21.45.4.ipa",
+          "size": 140303052,
+          "sha256": "c29cc9b35fd97a34e1f9f42e244ee12bf85fa67984c9aa3e926a73fe7baa91bb",
+          "minOSVersion": "17.0"
+        },
+        {
           "version": "21.44.4",
           "date": "2026-11-04T04:49:39Z",
           "localizedDescription": "Bug fixes and improvements.",
@@ -241,31 +250,31 @@
       ],
       "appPermissions": {
         "entitlements": [
-          "com.apple.developer.networking.multicast",
-          "com.apple.security.application-groups",
-          "com.apple.developer.usernotifications.time-sensitive",
-          "com.apple.developer.device-information.user-assigned-device-name",
-          "com.apple.developer.declared-age-range",
-          "com.apple.developer.associated-domains",
-          "com.apple.developer.usernotifications.communication",
-          "com.apple.developer.siri",
-          "com.apple.developer.coremedia.allow-alternate-video-decoder-selection",
-          "keychain-access-groups",
           "com.apple.developer.storekit.request-data",
-          "aps-environment",
           "com.apple.developer.networking.wifi-info",
-          "com.apple.developer.group-session"
+          "com.apple.developer.networking.multicast",
+          "com.apple.developer.group-session",
+          "com.apple.developer.usernotifications.time-sensitive",
+          "keychain-access-groups",
+          "com.apple.developer.associated-domains",
+          "com.apple.developer.siri",
+          "com.apple.security.application-groups",
+          "aps-environment",
+          "com.apple.developer.declared-age-range",
+          "com.apple.developer.coremedia.allow-alternate-video-decoder-selection",
+          "com.apple.developer.device-information.user-assigned-device-name",
+          "com.apple.developer.usernotifications.communication"
         ],
         "privacy": {
-          "NSLocalNetworkUsageDescription": "Access to your network allows YouTube to discover and connect to devices such as your TV.",
+          "NSLocationWhenInUseUsageDescription": "This enables local content discovery, improved recommendations, and enhanced search results.",
           "NSUserTrackingUsageDescription": "To personalize ads and provide ad measurement, YouTube will link activity from this app with activity from non-Google apps and websites.",
           "NSCameraUsageDescription": "This lets you create videos using the app.",
-          "NSLocationWhenInUseUsageDescription": "This enables local content discovery, improved recommendations, and enhanced search results.",
-          "NSPhotoLibraryUsageDescription": "This lets you upload media you've already created.",
-          "NSAppleMusicUsageDescription": "This lets you add your own audio files to your videos.",
-          "NSMicrophoneUsageDescription": "This lets you include audio with your videos and search using your voice.",
+          "NSContactsUsageDescription": "Your contacts will be sent to YouTube servers to help you find friends to share videos with.",
           "NSBluetoothPeripheralUsageDescription": "YouTube needs bluetooth access to scan for nearby Cast devices.",
-          "NSContactsUsageDescription": "Your contacts will be sent to YouTube servers to help you find friends to share videos with."
+          "NSAppleMusicUsageDescription": "This lets you add your own audio files to your videos.",
+          "NSLocalNetworkUsageDescription": "Access to your network allows YouTube to discover and connect to devices such as your TV.",
+          "NSMicrophoneUsageDescription": "This lets you include audio with your videos and search using your voice.",
+          "NSPhotoLibraryUsageDescription": "This lets you upload media you've already created."
         }
       }
     }
