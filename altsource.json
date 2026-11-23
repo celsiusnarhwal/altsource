@@ -126,91 +126,100 @@
       "developerName": "Google and YTKACE contributors",
       "subtitle": "A free and open-source YouTube enhancer",
       "localizedDescription": "YTKACE is an enhancement mod for YouTube. For more information, visit YTKACE's repository: https://github.com/itzzace/ytkace",
-      "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/14/ce/45/14ce45d8-5ca6-1dfa-c4a5-4660061cf213/logo_youtube_2024_q4_color-0-0-1x_U007emarketing-0-0-0-7-0-0-0-85-220.png/100x100bb.jpg",
+      "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/3c/40/e9/3c40e960-3fc8-beba-ad9a-b71ac5c9e59d/logo_youtube_2024_q4_color-0-0-1x_U007emarketing-0-0-0-7-0-0-0-85-220.png/100x100bb.jpg",
       "tintColor": "#FF0033",
       "category": "photo-video",
       "screenshots": {
         "iphone": [
           {
-            "imageURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/de/5a/90/de5a90bf-0ea7-265c-67bb-51d5c50d96bd/f1192f1f-430d-469a-b032-cdf77b8b04c7_iOS-5.5-in_1.jpg/392x696bb.jpg",
+            "imageURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/a7/fb/50/a7fb5032-2323-ea24-7617-9191b01a0b51/f1192f1f-430d-469a-b032-cdf77b8b04c7_iOS-5.5-in_1.jpg/392x696bb.jpg",
             "width": 392,
             "height": 696
           },
           {
-            "imageURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/fd/9e/3a/fd9e3a99-563c-c21e-9a7b-9c395c159f66/868afd15-b2e4-4923-b0f8-c5599327a3d7_iOS-5.5-in_2.jpg/392x696bb.jpg",
+            "imageURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/be/6a/24/be6a2427-86d7-a616-cf13-5c59f0633cd2/868afd15-b2e4-4923-b0f8-c5599327a3d7_iOS-5.5-in_2.jpg/392x696bb.jpg",
             "width": 392,
             "height": 696
           },
           {
-            "imageURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/77/96/3f/77963f76-6cf7-4100-e0d4-8998db26396a/2930dbc3-4228-403b-b46d-e0066516ab6a_iOS-5.5-in_3.jpg/392x696bb.jpg",
+            "imageURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/5f/3b/85/5f3b8583-f9e3-ccd7-6354-ccc1749ece0e/2930dbc3-4228-403b-b46d-e0066516ab6a_iOS-5.5-in_3.jpg/392x696bb.jpg",
             "width": 392,
             "height": 696
           },
           {
-            "imageURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/50/e5/3550e583-e240-168e-858f-ef823a45c747/45519fca-0e0b-466e-9ed6-9a43232a0bf8_iOS-5.5-in_4.jpg/392x696bb.jpg",
+            "imageURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/f9/f4/cf/f9f4cf8d-0d02-42bc-87e8-8be2420f104b/45519fca-0e0b-466e-9ed6-9a43232a0bf8_iOS-5.5-in_4.jpg/392x696bb.jpg",
             "width": 392,
             "height": 696
           },
           {
-            "imageURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c1/32/54/c1325465-bfc3-e271-0553-dd89a4b151c9/bace9abd-71f3-4700-8adf-cedcba275a67_iOS-5.5-in_5.jpg/392x696bb.jpg",
+            "imageURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ea/1b/bb/ea1bbbf3-1351-252a-6078-7909ade936fa/bace9abd-71f3-4700-8adf-cedcba275a67_iOS-5.5-in_5.jpg/392x696bb.jpg",
             "width": 392,
             "height": 696
           }
         ],
         "ipad": [
           {
-            "imageURL": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/5e/b7/cc/5eb7cc32-44c0-fa17-8295-8b756a2a5f34/874e4458-7af3-45b9-8cd2-bf7ff6d03817_2048x2732bb__U00281_U0029.png/576x768bb.png",
+            "imageURL": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/20/d0/dd/20d0ddd2-7cd2-6f3d-f052-be8135d25ae3/874e4458-7af3-45b9-8cd2-bf7ff6d03817_2048x2732bb__U00281_U0029.png/576x768bb.png",
             "width": 576,
             "height": 768
           },
           {
-            "imageURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/5e/6d/73/5e6d73cf-08a1-ca1a-40ea-e87d7089315b/mzl.soxnenam.jpg/576x768bb.jpg",
+            "imageURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/de/32/a3/de32a320-ec43-8954-b7ec-dc42abee401c/mzl.soxnenam.jpg/576x768bb.jpg",
             "width": 576,
             "height": 768
           },
           {
-            "imageURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/6a/7a/24/6a7a247c-8596-54c8-d92e-b3d2edd53dd0/mzl.odjiekca.jpg/576x768bb.jpg",
+            "imageURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/9b/23/ed/9b23ed87-8fd9-4b5f-19e9-ce68de79676e/mzl.odjiekca.jpg/576x768bb.jpg",
             "width": 576,
             "height": 768
           },
           {
-            "imageURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/65/06/27/65062787-db4c-674d-a0c8-8d40015cddaf/mzl.xgpxsdbq.jpg/576x768bb.jpg",
+            "imageURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/01/a2/4a/01a24aec-0b8f-aadf-e125-18d0650f8243/mzl.xgpxsdbq.jpg/576x768bb.jpg",
             "width": 576,
             "height": 768
           },
           {
-            "imageURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/46/4d/3c/464d3c74-833b-e2c8-dd74-db086b098844/mzl.monqskwz.jpg/576x768bb.jpg",
+            "imageURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/bc/b9/b4/bcb9b4c2-0b32-b837-072f-8cf6a95fb932/mzl.monqskwz.jpg/576x768bb.jpg",
             "width": 576,
             "height": 768
           },
           {
-            "imageURL": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/e8/ab/eb/e8abeb2e-3045-5acd-87e5-6f4ddadadc81/iOS-iPad-Pro_2ndgen_1.jpg/576x768bb.jpg",
+            "imageURL": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/53/c5/34/53c534ed-81b8-6476-5f93-30941e347c93/iOS-iPad-Pro_2ndgen_1.jpg/576x768bb.jpg",
             "width": 576,
             "height": 768
           },
           {
-            "imageURL": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/54/64/c1/5464c107-b46a-e864-e6f2-f8b66eeeeb0d/iOS-iPad-Pro_2ndgen_2.jpg/576x768bb.jpg",
+            "imageURL": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/9f/3f/03/9f3f0383-ed78-ab10-db88-89146745a399/iOS-iPad-Pro_2ndgen_2.jpg/576x768bb.jpg",
             "width": 576,
             "height": 768
           },
           {
-            "imageURL": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f1/9b/26/f19b265c-8b96-ffa1-b61c-7ad81341214d/iOS-iPad-Pro_2ndgen_3.jpg/576x768bb.jpg",
+            "imageURL": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/98/f6/21/98f6219a-00f8-7f37-c876-dc74597f55a0/iOS-iPad-Pro_2ndgen_3.jpg/576x768bb.jpg",
             "width": 576,
             "height": 768
           },
           {
-            "imageURL": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/4b/ef/44/4bef441e-8a89-3bfc-b827-3a9ff7771f20/iOS-iPad-Pro_2ndgen_4.jpg/576x768bb.jpg",
+            "imageURL": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/7d/6a/69/7d6a692c-6556-dc10-beb9-5fe21871fee2/iOS-iPad-Pro_2ndgen_4.jpg/576x768bb.jpg",
             "width": 576,
             "height": 768
           },
           {
-            "imageURL": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c5/d7/de/c5d7de49-d89b-aa43-2dbf-0e2a60042d3d/iOS-iPad-Pro_2ndgen_5.jpg/576x768bb.jpg",
+            "imageURL": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d8/9e/3d/d89e3d38-35d3-fd4c-7992-5c3e245578c9/iOS-iPad-Pro_2ndgen_5.jpg/576x768bb.jpg",
             "width": 576,
             "height": 768
           }
         ]
       },
       "versions": [
+        {
+          "version": "21.47.6",
+          "date": "2026-11-23T05:44:08Z",
+          "localizedDescription": "Bug fixes and improvements.",
+          "downloadURL": "https://github.com/itzzace/ytkace/releases/download/v1.1.9/YTKACE_1.1.9_YouTube_21.47.6.ipa",
+          "size": 143414110,
+          "sha256": "360497d360b2a94ac44a43c188c655462e5a3b4e1cd4e484840518b31a80c021",
+          "minOSVersion": "17.0"
+        },
         {
           "version": "21.46.3",
           "date": "2026-11-16T04:43:48Z",
@@ -259,31 +268,31 @@
       ],
       "appPermissions": {
         "entitlements": [
-          "com.apple.developer.coremedia.allow-alternate-video-decoder-selection",
-          "com.apple.developer.networking.multicast",
-          "com.apple.developer.siri",
-          "com.apple.developer.usernotifications.time-sensitive",
-          "com.apple.developer.storekit.request-data",
-          "com.apple.developer.associated-domains",
-          "com.apple.developer.device-information.user-assigned-device-name",
-          "com.apple.developer.usernotifications.communication",
-          "com.apple.developer.group-session",
-          "com.apple.security.application-groups",
-          "com.apple.developer.networking.wifi-info",
           "aps-environment",
+          "com.apple.developer.networking.multicast",
+          "com.apple.developer.coremedia.allow-alternate-video-decoder-selection",
+          "com.apple.security.application-groups",
           "keychain-access-groups",
-          "com.apple.developer.declared-age-range"
+          "com.apple.developer.storekit.request-data",
+          "com.apple.developer.device-information.user-assigned-device-name",
+          "com.apple.developer.declared-age-range",
+          "com.apple.developer.associated-domains",
+          "com.apple.developer.networking.wifi-info",
+          "com.apple.developer.siri",
+          "com.apple.developer.group-session",
+          "com.apple.developer.usernotifications.time-sensitive",
+          "com.apple.developer.usernotifications.communication"
         ],
         "privacy": {
-          "NSLocationWhenInUseUsageDescription": "This enables local content discovery, improved recommendations, and enhanced search results.",
           "NSAppleMusicUsageDescription": "This lets you add your own audio files to your videos.",
-          "NSMicrophoneUsageDescription": "This lets you include audio with your videos and search using your voice.",
-          "NSBluetoothPeripheralUsageDescription": "YouTube needs bluetooth access to scan for nearby Cast devices.",
           "NSUserTrackingUsageDescription": "To personalize ads and provide ad measurement, YouTube will link activity from this app with activity from non-Google apps and websites.",
+          "NSMicrophoneUsageDescription": "This lets you include audio with your videos and search using your voice.",
           "NSCameraUsageDescription": "This lets you create videos using the app.",
-          "NSLocalNetworkUsageDescription": "Access to your network allows YouTube to discover and connect to devices such as your TV.",
           "NSPhotoLibraryUsageDescription": "This lets you upload media you've already created.",
-          "NSContactsUsageDescription": "Your contacts will be sent to YouTube servers to help you find friends to share videos with."
+          "NSLocationWhenInUseUsageDescription": "This enables local content discovery, improved recommendations, and enhanced search results.",
+          "NSBluetoothPeripheralUsageDescription": "YouTube needs bluetooth access to scan for nearby Cast devices.",
+          "NSContactsUsageDescription": "Your contacts will be sent to YouTube servers to help you find friends to share videos with.",
+          "NSLocalNetworkUsageDescription": "Access to your network allows YouTube to discover and connect to devices such as your TV."
         }
       }
     }
